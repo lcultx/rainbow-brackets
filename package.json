@@ -1,0 +1,46 @@
+{
+	"name": "rainbow-brackets",
+	"displayName": "Rainbow Brackets",
+	"description": "A rainbow brackets extension for VS Code.",
+	"version": "0.0.6",
+	"publisher": "2gua",
+	"license": "MIT",
+	"icon": "images/rainbowBrackets.png",
+	"author": {
+		"name": "2gua"
+	},
+	"galleryBanner": {
+		"color": "#5c2d91",
+		"theme": "dark"
+	},
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"homepage": "http://www.2gua.info/",
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"rainbow",
+		"bracket",
+		"brackets"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/src/extension",
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^1.8.5",
+		"vscode": "^0.11.0"
+	},
+	"__metadata": {
+		"id": "797a79de-a0fd-4349-9034-bec47be9a941",
+		"publisherId": "83d1cc61-fc32-4da9-8e6e-5a5fc51cdb81",
+		"publisherDisplayName": "2gua"
+	}
+}
