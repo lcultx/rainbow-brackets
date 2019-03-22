@@ -7,6 +7,22 @@ function activate(context) {
     var roundBracketsColor = ["#e6b422", "#c70067", "#00a960", "#fc7482"];
     var squareBracketsColor = ["#33ccff", "#8080ff", "#0073a8"];
     var squigglyBracketsColor = ["#d4d4aa", "#d1a075", "#9c6628"];
+    var isolatedRightBracketsColor = "#e2041b";
+    var config = vscode.workspace.getConfiguration("rainbow_brackets");
+    if (config) {
+        if (config.roundBracketsColor && config.roundBracketsColor instanceof Array) {
+            roundBracketsColor = config.roundBracketsColor;
+        }
+        if (config.squareBracketsColor && config.squareBracketsColor instanceof Array) {
+            squareBracketsColor = config.squareBracketsColor;
+        }
+        if (config.squigglyBracketsColor && config.squigglyBracketsColor instanceof Array) {
+            squigglyBracketsColor = config.squigglyBracketsColor;
+        }
+        if (config.isolatedRightBracketsColor && typeof config.isolatedRightBracketsColor === 'string') {
+            isolatedRightBracketsColor = config.isolatedRightBracketsColor;
+        }
+    }
     var roundBracketsDecorationTypes = [];
     var squareBracketsDecorationTypes = [];
     var squigglyBracketsDecorationTypes = [];
@@ -26,7 +42,7 @@ function activate(context) {
         }));
     }
     var isolatedRightBracketsDecorationTypes = vscode.window.createTextEditorDecorationType({
-        color: "#e2041b"
+        color: isolatedRightBracketsColor
     });
     var activeEditor = vscode.window.activeTextEditor;
     if (activeEditor) {
